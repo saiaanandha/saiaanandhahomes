@@ -29,7 +29,7 @@
         /* Navigation Bar */
         header {
             background-color: var(--primary-blue);
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,12 +39,12 @@
             z-index: 1000;
         }
 
-        /* Updated Header Logo Text Styling */
+        /* Adjusted Logo text layout constraints to avoid scaling breakages */
         .logo-area h1 {
             color: #fff;
-            font-size: 36px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             margin: 0;
         }
@@ -76,24 +76,24 @@
 
         .digital-signboard {
             background: linear-gradient(135deg, #0b2249 0%, #133b75 100%);
-            border: 5px solid #d4af37; /* Premium Gold Border */
+            border: 5px solid #d4af37; 
             border-radius: 4px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(0,0,0,0.4);
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1.2fr 2fr;
             width: 100%;
             max-width: 1100px;
-            min-height: 400px;
+            min-height: 420px;
             overflow: hidden;
             position: relative;
         }
 
-        /* Left Image & Arch Styling */
+        /* Left Image Panel - Adjusted fit handling for Baba picture alignment */
         .signboard-graphic {
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            padding-left: 20px;
+            padding: 20px 10px 0 20px;
             position: relative;
             background: rgba(0, 0, 0, 0.1);
         }
@@ -101,10 +101,10 @@
         .gold-arch {
             border: 3px solid #d4af37;
             border-bottom: none;
-            border-top-left-radius: 150px;
-            border-top-right-radius: 150px;
-            width: 85%;
-            height: 90%;
+            border-top-left-radius: 160px;
+            border-top-right-radius: 160px;
+            width: 100%;
+            height: 95%;
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -114,10 +114,11 @@
         }
 
         .baba-img {
-            max-width: 100%;
-            max-height: 95%;
-            object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(255, 223, 112, 0.6)); /* Radiant Halo Effect */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            filter: drop-shadow(0 0 15px rgba(255, 223, 112, 0.4));
         }
 
         /* Right Text Panel Styling */
@@ -131,8 +132,8 @@
 
         .brand-name {
             font-family: 'Georgia', serif;
-            font-size: 42px;
-            color: #d4af37; /* Gold Text */
+            font-size: 38px;
+            color: #d4af37; 
             letter-spacing: 2px;
             margin-bottom: 2px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
@@ -140,7 +141,7 @@
         }
 
         .brand-tagline {
-            font-size: 18px;
+            font-size: 16px;
             letter-spacing: 4px;
             color: #ffffff;
             margin-bottom: 15px;
@@ -156,7 +157,7 @@
         }
 
         .motto {
-            font-size: 20px;
+            font-size: 18px;
             font-style: italic;
             color: #e0e0e0;
             margin-bottom: 25px;
@@ -166,14 +167,14 @@
         .services-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 35px;
+            gap: 12px;
+            margin-bottom: 30px;
         }
 
         .services-tags span {
-            font-size: 14px;
+            font-size: 13px;
             background: rgba(255, 255, 255, 0.1);
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 20px;
             border: 1px solid rgba(212, 175, 55, 0.3);
             color: #f5f5f5;
@@ -224,7 +225,7 @@
             font-size: 18px;
         }
 
-        /* Enhanced Services Grid with Background Images */
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -251,7 +252,6 @@
             z-index: 1;
         }
 
-        /* Specific Architectural Image Overlays */
         .card-apartments {
             background-image: linear-gradient(rgba(15, 43, 92, 0.88), rgba(15, 43, 92, 0.88)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80');
         }
@@ -274,7 +274,6 @@
             box-shadow: 0 12px 24px rgba(0,0,0,0.2);
         }
 
-        /* Typography Inside Cards */
         .service-card h3 {
             color: var(--accent-gold);
             font-size: 22px;
@@ -341,6 +340,11 @@
             cursor: pointer;
             border-radius: 4px;
             width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .footer-form button:hover {
+            background-color: #ffffff;
         }
 
         .footer-bottom {
@@ -357,10 +361,13 @@
             }
             .signboard-graphic {
                 padding: 20px;
-                height: 300px;
+                height: 350px;
             }
             .brand-name {
                 font-size: 30px;
+            }
+            .logo-area h1 {
+                font-size: 24px;
             }
         }
     </style>
@@ -387,7 +394,6 @@
             <!-- Left Side: Divine Blessing Image & Arch -->
             <div class="signboard-graphic">
                 <div class="gold-arch">
-                    <!-- Ensure this image is saved in your project folder -->
                     <img src="sai-baba.png" alt="Lord Shirdi Sai Baba Blessing" class="baba-img">
                 </div>
             </div>
@@ -433,25 +439,21 @@
         <h2 class="section-title">Our Expertise</h2>
         <div class="services-grid">
             
-            <!-- Card 1: Apartments -->
             <div class="service-card card-apartments">
                 <h3>Residential Apartments</h3>
                 <p>Modern, structurally sound high-rises offering state-of-the-art amenities for urban families.</p>
             </div>
             
-            <!-- Card 2: Villas -->
             <div class="service-card card-villas">
                 <h3>Luxury Villas</h3>
                 <p>Exclusively crafted independent premium villas built to your elite tastes and preferences.</p>
             </div>
             
-            <!-- Card 3: Commercial -->
             <div class="service-card card-commercial">
                 <h3>Commercial Projects</h3>
                 <p>Optimized retail spaces and business corporate parks engineered for high-performance productivity.</p>
             </div>
             
-            <!-- Card 4: Gated Communities -->
             <div class="service-card card-gated">
                 <h3>Gated Communities</h3>
                 <p>Master-planned, secure community developments blending lush nature with modern-day infrastructure.</p>
@@ -470,12 +472,18 @@
                 <p><strong>Email:</strong> sai.aanandha@gmail.com</p>
                 <p style="margin-top: 15px; font-style: italic; color: #aaa;">"Om Sai Ram — May peace and prosperity guide your new home."</p>
             </div>
+            
             <div class="footer-form">
                 <h3>Get In Touch</h3>
-                <form action="#" method="POST" onsubmit="alert('Thank you for reaching out! We will contact you soon.'); return false;">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <textarea rows="4" placeholder="Your Requirements / Message" required></textarea>
+                <!-- Integrated Formspree action targeting your specific corporate email -->
+                <form id="customerForm" action="https://formspree.io/f/xoqgkyre" method="POST">
+                    <!-- Hidden input to set a clean email subject line for your inbox -->
+                    <input type="hidden" name="_subject" value="Sai Aanandha Homes - Customer Details Submission">
+                    
+                    <input type="text" name="Customer Name" placeholder="Your Name" required>
+                    <input type="email" name="Customer Email" placeholder="Your Email Address" required>
+                    <textarea name="Customer Requirements" rows="4" placeholder="Your Requirements / Message" required></textarea>
+                    
                     <button type="submit">Submit Inquiry</button>
                 </form>
             </div>
@@ -484,6 +492,32 @@
             &copy; 2026 Sai Aanandha Homes - Infrastructure Developers. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- Form processing script to automatically wipe form fields completely on submission -->
+    <script>
+        const form = document.getElementById('customerForm');
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    alert('Thank you for reaching out! Your details have been securely sent to Sai Aanandha Homes.');
+                    form.reset(); // This completely clears out the form text inputs right away
+                } else {
+                    alert('Oops! There was a slight problem submitting your form. Please try again.');
+                }
+            } catch (error) {
+                alert('Connection error. Please check your network and try again.');
+            }
+        });
+    </script>
 
 </body>
 </html>
