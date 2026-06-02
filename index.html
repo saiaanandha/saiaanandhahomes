@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Aanandha Homes | Infrastructure Developers</title>
+    <style>
+        /* Global Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #0f2b5c;
+            --accent-gold: #d4af37;
+            --light-bg: #f9f9f9;
+            --dark-text: #333;
+        }
+
+        body {
+            color: var(--dark-text);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--primary-blue);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area h1 {
+            color: #fff;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .logo-area span {
+            color: var(--accent-gold);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 43, 92, 0.85), rgba(15, 43, 92, 0.85)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+        }
+
+        /* About Section */
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-blue);
+            transition: translateY 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--accent-gold);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Contact Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: #fff;
+            padding: 40px 10% 20px;
+            border-top: 4px solid var(--accent-gold);
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-info, .footer-form {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .footer-info h3, .footer-form h3 {
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .footer-form input, .footer-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .footer-form input::placeholder, .footer-form textarea::placeholder {
+            color: #ccc;
+        }
+
+        .footer-form button {
+            background-color: var(--accent-gold);
+            color: var(--primary-blue);
+            border: none;
+            padding: 10px 20px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="logo-area">
+            <h1>SAI AANANDHA <span>HOMES</span></h1>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2>Building Dreams, Creating Happiness</h2>
+        <p>With the divine blessings of Shirdi Sai, we construct spaces that inspire life and prosperity.</p>
+        <a href="#contact" class="btn">Enquire Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2 class="section-title">About Us</h2>
+        <p>
+            At <strong>Sai Aanandha Homes</strong>, we are premier infrastructure developers committed to engineering structural excellence. Guided by the values of integrity, transparency, and dedication, we transform blueprints into breathtaking realities. From contemporary apartments to sprawling gated communities, we build structures designed to last generations.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">Our Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Residential Apartments</h3>
+                <p>Modern, structurally sound high-rises offering state-of-the-art amenities for urban families.</p>
+            </div>
+            <div class="service-card">
+                <h3>Luxury Villas</h3>
+                <p>Exclusively crafted independent premium villas built to your elite tastes and preferences.</p>
+            </div>
+            <div class="service-card">
+                <h3>Commercial Projects</h3>
+                <p>Optimized retail spaces and business corporate parks engineered for high-performance productivity.</p>
+            </div>
+            <div class="service-card">
+                <h3>Gated Communities</h3>
+                <p>Master-planned, secure community developments blending lush nature with modern-day infrastructure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Contact Details</h3>
+                <p><strong>Corporate Office:</strong> [Your Address, City, India]</p>
+                <p style="margin-top: 10px;"><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> info@saiaanandhahomes.in</p>
+                <p style="margin-top: 15px; font-style: italic; color: #aaa;">"Om Sai Ram — May peace and prosperity guide your new home."</p>
+            </div>
+            <div class="footer-form">
+                <h3>Get In Touch</h3>
+                <form action="#" method="POST" onsubmit="alert('Thank you for reaching out! We will contact you soon.'); return false;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <textarea rows="4" placeholder="Your Requirements / Message" required></textarea>
+                    <button type="submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Sai Aanandha Homes - Infrastructure Developers. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
