@@ -224,31 +224,72 @@
             font-size: 18px;
         }
 
-        /* Services Grid */
+        /* Enhanced Services Grid with Background Images */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background: #fff;
-            padding: 30px;
+            position: relative;
+            padding: 40px 30px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-blue);
-            transition: translateY 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-blue);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-top-color 0.3s ease;
+            z-index: 1;
+        }
+
+        /* Specific Architectural Image Overlays */
+        .card-apartments {
+            background-image: linear-gradient(rgba(15, 43, 92, 0.88), rgba(15, 43, 92, 0.88)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .card-villas {
+            background-image: linear-gradient(rgba(15, 43, 92, 0.88), rgba(15, 43, 92, 0.88)), url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .card-commercial {
+            background-image: linear-gradient(rgba(15, 43, 92, 0.88), rgba(15, 43, 92, 0.88)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80');
+        }
+
+        .card-gated {
+            background-image: linear-gradient(rgba(15, 43, 92, 0.88), rgba(15, 43, 92, 0.88)), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80');
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             border-top-color: var(--accent-gold);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
         }
 
+        /* Typography Inside Cards */
         .service-card h3 {
-            color: var(--primary-blue);
+            color: var(--accent-gold);
+            font-size: 22px;
             margin-bottom: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .service-card p {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
         }
 
         /* Contact Footer */
@@ -391,22 +432,31 @@
     <section class="services" id="services">
         <h2 class="section-title">Our Expertise</h2>
         <div class="services-grid">
-            <div class="service-card">
+            
+            <!-- Card 1: Apartments -->
+            <div class="service-card card-apartments">
                 <h3>Residential Apartments</h3>
                 <p>Modern, structurally sound high-rises offering state-of-the-art amenities for urban families.</p>
             </div>
-            <div class="service-card">
+            
+            <!-- Card 2: Villas -->
+            <div class="service-card card-villas">
                 <h3>Luxury Villas</h3>
                 <p>Exclusively crafted independent premium villas built to your elite tastes and preferences.</p>
             </div>
-            <div class="service-card">
+            
+            <!-- Card 3: Commercial -->
+            <div class="service-card card-commercial">
                 <h3>Commercial Projects</h3>
                 <p>Optimized retail spaces and business corporate parks engineered for high-performance productivity.</p>
             </div>
-            <div class="service-card">
+            
+            <!-- Card 4: Gated Communities -->
+            <div class="service-card card-gated">
                 <h3>Gated Communities</h3>
                 <p>Master-planned, secure community developments blending lush nature with modern-day infrastructure.</p>
             </div>
+            
         </div>
     </section>
 
